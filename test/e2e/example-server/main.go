@@ -48,7 +48,9 @@ func init() {
 }
 
 func ServerHTTP(writer http.ResponseWriter, request *http.Request) {
+	log.Println("TEST1:" + time.Now().Format("2006-01-02 15:04:05"))
 	time.Sleep(time.Duration(3000) * time.Millisecond)
+	log.Println("TEST2:" + time.Now().Format("2006-01-02 15:04:05"))
 
 	clientReq, err := http.NewRequest(http.MethodPost, upstreamURL, nil)
 	if err != nil {
